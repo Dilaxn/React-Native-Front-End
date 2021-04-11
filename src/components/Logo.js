@@ -10,5 +10,7 @@ const styles = StyleSheet.create({
     width: 110,
     height: 110,
     marginBottom: 8,
+    background:"red"
+
   },
 })
