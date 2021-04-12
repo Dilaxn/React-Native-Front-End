@@ -36,6 +36,7 @@
     "eslint-plugin-jsx-a11y": "^6.4.1",
     "eslint-plugin-prettier": "^3.2.0",
     "eslint-plugin-react": "^7.21.5",
+    "navigationbar-react-native": "^0.0.5",
     "prettier": "^2.2.1"
   },
   "private": true

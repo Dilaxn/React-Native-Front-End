@@ -5399,6 +5399,11 @@ natural-compare@^1.4.0:
   resolved "https://registry.yarnpkg.com/natural-compare/-/natural-compare-1.4.0.tgz#4abebfeed7541f2c27acfb29bdbbd15c8d5ba4f7"
   integrity sha1-Sr6/7tdUHywnrPspvbvRXI1bpPc=
 
+navigationbar-react-native@^0.0.5:
+  version "0.0.5"
+  resolved "https://registry.yarnpkg.com/navigationbar-react-native/-/navigationbar-react-native-0.0.5.tgz#9746c54ce11a59e1872e403c51eb145e24595015"
+  integrity sha512-Yzk0md2aS2cEQLlp71H/lX2tiVG8pTA0VfvztFTwl2iR9PYafAVTDjD/If9+Er5g4fW/bxF8uVbXCwfEh6Xoow==
+
 negotiator@0.6.2:
   version "0.6.2"
   resolved "https://registry.yarnpkg.com/negotiator/-/negotiator-0.6.2.tgz#feacf7ccf525a77ae9634436a64883ffeca346fb"
