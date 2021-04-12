@@ -1,43 +1,61 @@
-import React, { Component } from 'react';
-import { View, Text, TouchableOpacity } from 'react-native';
-import { Drawer } from 'react-native-material-drawer';
+import * as React from 'react';
+import { View, Text, Button } from 'react-native';
+import { NavigationContainer } from '@react-navigation/native';
+import {
+    createDrawerNavigator,
+    DrawerContentScrollView,
+    DrawerItemList,
+    DrawerItem,
+} from '@react-navigation/drawer';
 
-const styles = {
-    container: {
-        width: '100%',
-    },
-    body: {
-        backgroundColor: '#eee',
-    },
-};
+function Feed({ navigation }) {
+    return (
+        <View style={{ flex: 1, justifyContent: 'center', alignItems: 'center' }}>
+            <Text>Feed Screen</Text>
+            <Button title="Open drawer" onPress={() => navigation.openDrawer()} />
+            <Button title="Toggle drawer" onPress={() => navigation.toggleDrawer()} />
+        </View>
+    );
+}
 
-export default class Sidebar extends Component {
-    constructor(props) {
-        super(props)
-        this.state = {
-            isOpen: false
-        }
-    }
-    render() {
-        return (
-            <View style={styles.container}>
-                <Drawer
-                    open={this.state.isOpen}
-                    drawerContent={<View><Text>Drawer Content</Text></View>}
-                    onClose={() => this.setState({ isOpen: false })}
-                    animationTime={250}>
-                    <View style={styles.body}>
-                        <View style={{ marginTop: 20, alignItems: 'center', width: '100%', flex: 1 }}>
-                            <Text style={{ marginBottom: 20 }}>
-                                This is a page
-                            </Text>
-                            <TouchableOpacity onTouch={() => this.setState({ isOpen: !this.state.isOpen })}>
-                                <Text>Toggle</Text>
-                            </TouchableOpacity>
-                        </View>
-                    </View>
-                </Drawer>
-            </View>
-        );
-    }
+function Notifications() {
+    return (
+        <View style={{ flex: 1, justifyContent: 'center', alignItems: 'center' }}>
+            <Text>Notifications Screen</Text>
+        </View>
+    );
+}
+
+function CustomDrawerContent(props) {
+    return (
+        <DrawerContentScrollView {...props}>
+            <DrawerItemList {...props} />
+            <DrawerItem
+                label="Close drawer"
+                onPress={() => props.navigation.closeDrawer()}
+            />
+            <DrawerItem
+                label="Toggle drawer"
+                onPress={() => props.navigation.toggleDrawer()}
+            />
+        </DrawerContentScrollView>
+    );
+}
+
+const Drawer = createDrawerNavigator();
+
+function MyDrawer() {
+    return (
+        <Drawer.Navigator drawerContent={props => <CustomDrawerContent {...props} />}>
+            <Drawer.Screen name="Feed" component={Feed} />
+            <Drawer.Screen name="Notifications" component={Notifications} />
+        </Drawer.Navigator>
+    );
+}
+
+export default function Sidebar() {
+    return (
+            <MyDrawer />
+
+    );
 }

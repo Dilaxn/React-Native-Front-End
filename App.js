@@ -10,6 +10,7 @@ import {
   ResetPasswordScreen,
   Dashboard,
 } from './src/screens'
+import Sidebar from "./src/components/Sidebar";
 
 const Stack = createStackNavigator()
 
@@ -23,6 +24,8 @@ export default function App() {
             headerShown: false,
           }}
         >
+          <Stack.Screen name="Sidebar" component={Sidebar} />
+
           <Stack.Screen name="StartScreen" component={StartScreen} />
           <Stack.Screen name="LoginScreen" component={LoginScreen} />
           <Stack.Screen name="RegisterScreen" component={RegisterScreen} />
