@@ -59,7 +59,7 @@ export default function LoginScreen({navigation}) {
                 if (token) {
                     navigation.reset({
                         index: 0,
-                        routes: [{name: 'Sidebar'}],
+                        routes: [{name: 'Navbar'}],
                     })
                 } else {
                     Alert.alert("Invalid Credentials")

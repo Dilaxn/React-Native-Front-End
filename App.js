@@ -11,6 +11,7 @@ import {
   Dashboard,
 } from './src/screens'
 import Sidebar from "./src/components/Sidebar";
+import Navbar from "./src/components/Navbar";
 
 const Stack = createStackNavigator()
 
@@ -25,7 +26,7 @@ export default function App() {
           }}
         >
           <Stack.Screen name="Sidebar" component={Sidebar} />
-
+          <Stack.Screen name="Navbar" component={Navbar} />
           <Stack.Screen name="StartScreen" component={StartScreen} />
           <Stack.Screen name="LoginScreen" component={LoginScreen} />
           <Stack.Screen name="RegisterScreen" component={RegisterScreen} />
