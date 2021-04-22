@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { View, Text, TouchableOpacity } from 'react-native';
 import { Drawer } from 'react-native-material-drawer';
+import Navbar from "../components/Navbar";
 
 const styles = {
     container: {
@@ -20,6 +21,7 @@ export default class Sidebar extends Component {
     }
     render() {
         return (
+            <View> <Navbar/>
             <View style={styles.container}>
                 <Drawer
                     open={this.state.isOpen}
@@ -37,6 +39,7 @@ export default class Sidebar extends Component {
                         </View>
                     </View>
                 </Drawer>
+            </View>
             </View>
         );
     }
